@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  height: 100svh;
+  height: calc(var(--vh, 100vh) - 100px);
   overflow: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,6 +12,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --vh: 100vh;
 }
 
 li {
@@ -35,7 +39,7 @@ input {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr .2fr;
-  height: 100svh;
+  height: 100vh;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -49,7 +53,7 @@ input {
 }
 
 @keyframes pageSlideUp {
-  from { top: 100svh; }
+  from { top: var(--100vh); }
   to { top: 0vh; }
 }
 
@@ -61,13 +65,13 @@ input {
 
 @keyframes pageSlideDown {
   from { top: 0vh; }
-  to { top: 100svh; }
+  to { top: var(--100vh); }
 }
 
 .page-container.closed {
   animation-name: pageSlideDown;
   animation-duration: .3s;
-  top: 100svh;
+  top: var(--100vh);
 }
 
 .page-sections {
