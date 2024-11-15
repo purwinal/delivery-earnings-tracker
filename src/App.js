@@ -8,15 +8,6 @@ import Settings from './pages/Settings.js';
 import DoNotDisturbOnOutlinedIcon from '@mui/icons-material/DoNotDisturbOnOutlined';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-})
-
-
 // Converts the dates into a common format
 const formatDate = (year, month, day) =>
     `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
