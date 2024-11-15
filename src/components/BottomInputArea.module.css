@@ -1,0 +1,41 @@
+
+.bottomInputArea {
+    display: inline-flex;
+    gap: 1.25rem;
+    padding: 2em 1em 2em 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.enterBtn {
+    background-color: #008d4b;
+    color: #fff;
+    width: 40%;
+    height: 4.6em;
+    margin-right: .5em;
+    border: none;
+    border-radius: 10px;
+}
+
+.enterBtn:active {
+    background-color: #004525;
+    color: #8e8e8e;
+}
+
+.enterBtn.disabled {
+    background-color: #8e8e8e;
+    color: #141414;
+}
+
+/* MENU OPEN EFFECTS: BACKGROUND TINTING */
+
+.bottomInputArea.menuOpen {
+  background-color: #000;
+}
+
+.bottomInputArea.menuOpen .amountInput,
+.bottomInputArea.menuOpen .enterBtn {
+  background-color: #141414;
+  color: #000000dc;
+}

@@ -1,0 +1,116 @@
+/* PAGE LAYOUT */
+
+.calendarSection {
+    padding-bottom: 1em;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* NAVIGATION SECTION */
+
+.calendarNavigationContainer {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.calendarNavigationDate {
+    padding: 0 .8em;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.calendarNavigationBtns {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    margin-bottom: -4px;
+    width: 20%;
+}
+
+/* CALENDAR GRID */
+
+.calendarGridContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 95vw;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.calendarWeekdayHeadings {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1em 0 .5em;
+}
+
+.calendarCells {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 48px;
+    cursor: pointer;
+}
+
+.calendarCells.focused {
+    background-color: lightsteelblue;
+    color: #141414;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+
+.calendarCells.today {
+    color: lightcoral;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.calendarCells.today.focused {
+    color: lightcoral;
+}
+
+.calendarEventMark {
+    border-radius: 50px;
+    height: 10px;
+    width: 10px;
+    justify-self: start;
+    background-color: #00c167;
+    margin-top: 5px;
+}
+
+/* EVENT DETAILS SECTION */
+
+.eventDetailsSection {
+    padding: 2em;
+}
+
+.eventContainer {
+    width: 100%;
+}
+
+.eventContainer h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.eventList {
+    padding: 0 2em;
+}
+
+.individualEventContainer {
+    padding: 0;
+}
+
+.eventItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed #a8a8a8;
+  line-height: 3rem;
+}
+

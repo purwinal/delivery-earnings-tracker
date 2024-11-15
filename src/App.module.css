@@ -1,0 +1,164 @@
+/* MENU OPEN EFFECTS: BACKGROUND TINTING */
+
+.topSection.menuOpen {
+    background-color: #000;
+}
+
+.middleSection.menuOpen {
+    background-color: #000000dc;
+    border-color: #000;
+}
+
+.topSection.menuOpen .divider,
+.middleSection.menuOpen div,
+.middleSection.menuOpen .amountDeleteBtn,
+.middleSection.menuOpen .divider {
+    color: #000000dc;
+    border-color: #000;
+    background-color: transparent;
+}
+
+.topSection.menuOpen .progressTitle,
+.topSection.menuOpen .progressBarTracker span {
+    color: #141414;
+}
+
+.topSection.menuOpen .progressBar {
+    background-color: #141414;
+    color: #000000dc;
+}
+
+/* MAIN SCREEN: TOP SECTION */
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 14rem minmax(auto, 1fr) 8rem;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: auto;
+}
+
+.topSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #141414;
+    padding: 1em 2em;
+}
+
+.progressTitle {
+    margin-top: 0;
+    color: #fff;
+}
+
+.progressBar {
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    height: 2.5em;
+    background-color: #fff;
+    margin-bottom: 1.2em;
+    overflow: hidden;
+}
+
+.progressBarFill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    max-width: 100%;
+    height: 100%;
+    transition: width 0.5s ease-out;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.progressBarTracker {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.totalEarnings {
+    color: #a5a5a5;
+}
+
+.totalEarnings.completed {
+    color: #008d4b;
+}
+
+.currentGoal {
+    color: #008d4b;
+}
+
+@keyframes trophyEffects {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(8deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-8deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.trophyIcon {
+    animation-name: trophyEffects;
+    animation-delay: .3s;
+    animation-duration: .3s;
+    animation-iteration-count: 4;
+    color: goldenrod;
+    margin-bottom: -10px;
+}
+
+/* MAIN SCREEN: MIDDLE SECTION */
+
+.middleSection {
+    background-color: #000;
+    padding: 2em 3em;
+    color: #fff;
+    overflow: auto;
+    line-height: 3.5rem;
+}
+
+.mappedGridHeadings,
+.mappedGridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    text-align: center;
+    align-items: center;
+}
+
+.mappedGridHeadings {
+    font-weight: bold;
+}
+
+.deleteBtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amountDeleteBtn {
+    border: none;
+    background-color: #000;
+    color: rgb(163, 52, 52);
+}
+
+/* MAIN SCREEN: BOTTOM SECTION */
+
+.bottomSection {
+    display: inline-flex;
+    gap: 1rem;
+    padding: 2em 0;
+    background-color: #141414;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,58 @@
+/* GOAL SECTION */
+
+.goalBtn {
+    width: 8em;
+    height: 3.3em;
+    border: none;
+    border-radius: 10px;
+    background-color: #008d4b;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.goalBtn:active {
+    background-color: #004525;
+    color: #8e8e8e;
+}
+
+/* THEME SECTION */
+
+.themeTitle {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.themeBtn {
+    display: inline-flex;
+    width: 4.5em;
+    height: 2.5em;
+    border-radius: 50px;
+    background-color: #a3a3a3;
+    border: 3px solid #a3a3a3;
+}
+
+.themeBtn.on {
+    background-color: #008d4b;
+    border-color: #008d4b;
+}
+
+.themeBtnLeft.on,
+.themeBtnRight.off {
+    background-color: none;
+    width: 50%;
+    height: 100%;
+}
+
+.themeBtnRight.on {
+    background-color: #fff;
+    border-radius: 50px;
+    width: 60%;
+    height: 100%;
+}
+
+.themeBtnLeft.off {
+    background-color: #fff;
+    border-radius: 50px;
+    width: 60%;
+    height: 100%;
+}
