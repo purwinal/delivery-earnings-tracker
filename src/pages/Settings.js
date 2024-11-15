@@ -38,7 +38,7 @@ const Settings = ({
                 <div className="flex-input-areas">
                     <input
                         type="number"
-                        inputmode="numeric"
+                        keyboardType="numeric"
                         className="goal-input"
                         placeholder="Enter amount..."
                         value={goalInput}
