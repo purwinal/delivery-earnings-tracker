@@ -1,6 +1,7 @@
 import { useState, useReducer, useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
+import { useViewportHeight } from 'react-viewport-height';
 import Navigation from './components/Navigation.js';
 import BottomInputArea from './components/BottomInputArea.js';
 import DailyLog from './pages/DailyLog.js';
@@ -246,8 +247,10 @@ function App() {
         }
     };
 
+    const height = useViewportHeight();
+
   	return (
-        <div className={styles.gridContainer}>
+        <div className={styles.gridContainer} style={{ height: height }}>
             <div className={`${styles.topSection} ${isMenuOpen ? styles.menuOpen : ""}`}>
                 <h1 className={styles.progressTitle}>Today's Progress</h1>
                 <div className={`${styles.progressBar} ${totalDailyEarnings >= currentGoal ? styles.completed : ''}`}>
