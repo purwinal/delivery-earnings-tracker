@@ -13,7 +13,6 @@ const BottomInputArea = ({
         <div className={`${styles.bottomInputArea} ${isMenuOpen ? styles.menuOpen : ""}`}>
             <input
                 type="number"
-                pattern="[0-9]*"
                 inputmode="numeric"
                 className={styles.amountInput}
                 placeholder="$0.00"
