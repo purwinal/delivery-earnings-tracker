@@ -246,7 +246,7 @@ function App() {
         }
     };
 
-    // Converts viewport height to account for browsers
+// Converts viewport height to account for browsers
     useEffect(() => {
         const setViewportHeight = () => {
             const vh = window.innerHeight * 0.01;
@@ -258,15 +258,16 @@ function App() {
         return () => window.removeEventListener('resize', setViewportHeight);
     }, []);
 
+// Added to possibly fix the progress bar issue
     useEffect(() => {
         const progressBar = document.querySelector('.progressBar');
         const progressBarFill = document.querySelector('.progressBarFill');
-    
+
         if (progressBar && progressBarFill) {
             const barWidthInPx = (totalDailyEarnings / currentGoal) * progressBar.offsetWidth;
             progressBarFill.style.width = `${barWidthInPx}px`;
         }
-    }, [totalDailyEarnings, currentGoal]); // Depend on these values
+    }, [totalDailyEarnings, currentGoal]);
 
   	return (
         <div className={styles.gridContainer}>
