@@ -210,8 +210,8 @@ function App() {
     const totalDailyEarnings = calculateTotalDailyEarnings(myEarnings).toFixed(2);
 
 // Converts the goals from strings to numbers
-    const convertStringsToNumbers = (goal) => {
-            const num = Number(goal);
+    const convertStringsToNumbers = (goalInput) => {
+            const num = Number(goalInput);
             return isNaN(num) ? 0 : num;
     }
 
@@ -261,10 +261,14 @@ function App() {
   	return (
         <div className={styles.gridContainer}>
             <div className={`${styles.topSection} ${isMenuOpen ? styles.menuOpen : ""}`}>
-                <h1 className={styles.progressTitle}>Today's Progress</h1>
+                <h1 className={styles.progressTitle}>Current Progress</h1>
                 <div className={`${styles.progressBar} ${totalDailyEarnings >= currentGoal ? styles.completed : ''}`}>
-                    <div className={styles.progressBarFill} style={{ width: `${totalDailyEarnings}%`, backgroundColor: progressBarColor() }}>
-                        {totalDailyEarnings <= currentGoal ? Math.floor((totalDailyEarnings / currentGoal) * 100) : currentGoal}%
+                    <div
+                        className={styles.progressBarFill}
+                        style={{ width: `${Math.min((totalDailyEarnings / currentGoal) * 100, 100)}%`,
+                        backgroundColor: progressBarColor() }}
+                    >
+                        {totalDailyEarnings <= currentGoal ? `${Math.floor((totalDailyEarnings / currentGoal) * 100)}%` : '100%'}
                     </div>
                 </div>
                 <div className={styles.progressBarTracker}>

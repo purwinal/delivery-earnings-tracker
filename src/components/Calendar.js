@@ -83,7 +83,7 @@ const Calendar = ({
                                 </li>
                                 <li className={styles.eventItems}>
                                     <span>Total Earnings:</span>
-                                    <span>{selectedEvent.aggregatedTotalAmount}</span>
+                                    <span>${selectedEvent.aggregatedTotalAmount}</span>
                                 </li>
                             </ul>
                         </section>
