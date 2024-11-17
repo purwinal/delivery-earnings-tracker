@@ -86,7 +86,7 @@
 /* EVENT DETAILS SECTION */
 
 .eventDetailsSection {
-    padding: 2em;
+    padding: 1em;
 }
 
 .eventContainer {
@@ -96,6 +96,10 @@
 .eventContainer h2 {
     text-align: center;
     margin-bottom: 1em;
+}
+
+.eventInfo h3 {
+    text-align: center;
 }
 
 .eventList {
