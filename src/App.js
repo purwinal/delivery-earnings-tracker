@@ -258,6 +258,16 @@ function App() {
         return () => window.removeEventListener('resize', setViewportHeight);
     }, []);
 
+    useEffect(() => {
+        const progressBar = document.querySelector('.progressBar');
+        const progressBarFill = document.querySelector('.progressBarFill');
+    
+        if (progressBar && progressBarFill) {
+            const barWidthInPx = (totalDailyEarnings / currentGoal) * progressBar.offsetWidth;
+            progressBarFill.style.width = `${barWidthInPx}px`;
+        }
+    }, [totalDailyEarnings, currentGoal]); // Depend on these values
+
   	return (
         <div className={styles.gridContainer}>
             <div className={`${styles.topSection} ${isMenuOpen ? styles.menuOpen : ""}`}>
