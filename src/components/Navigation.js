@@ -23,10 +23,12 @@ const Navigation = ({
                     : <MenuRoundedIcon className={styles.openMenuIcon} sx={{ fontSize: 80 }} />
                 }
             </button>
-            <ul className={`${styles.navMenuUl}
-                ${isMenuOpen ? styles.open : styles.closed}
-                ${isSettingsOpen ? styles.settingsOpen : styles.settingsClosed}
-                ${isDailyLogOpen ? styles.dailyLogOpen : styles.dailyLogClosed}`}
+            <ul
+                className={`${styles.navMenuUl}
+                    ${isMenuOpen ? styles.open : styles.closed}
+                    ${isSettingsOpen ? styles.pageOpen : styles.pageClosed}
+                    ${isDailyLogOpen ? styles.pageOpen : styles.pageClosed}
+                `}
                 ref={menuRef}
             >
                 <li><NavLink className={styles.navItem} to="/daily-log" onClick={toggleDailyLog}>DAILY LOG</NavLink></li>

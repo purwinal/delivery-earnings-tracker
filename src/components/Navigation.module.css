@@ -17,8 +17,7 @@
 
 .navMenuUl.open,
 .navMenuUl.closed,
-.navMenuUl.settingsOpen,
-.navMenuUl.dailyLogOpen {
+.navMenuUl.pageOpen {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -51,8 +50,7 @@
 }
 
 .navMenuUl.closed,
-.navMenuUl.settingsOpen,
-.navMenuUl.dailyLogOpen {
+.navMenuUl.pageOpen {
     animation-name: condenseMenu;
     animation-duration: .3s;
     left: -120px;
