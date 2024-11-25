@@ -15,15 +15,14 @@
     border: none;
 }
 
-.navMenuUl.open,
-.navMenuUl.closed,
-.navMenuUl.pageOpen {
+.navMenuUl {
     display: flex;
     flex-direction: column;
     position: absolute;
     bottom: -35px;
     z-index: 1;
     height: 100vh;
+    width: 70vw;
     align-items: center;
     justify-content: start;
     background-color: #141414;
@@ -33,28 +32,22 @@
 }
 
 @keyframes expandMenu {
-    from { width: 0vw; }
-    to { width: 70vw; }
-}
-
-.navMenuUl.open {
-    animation-name: expandMenu;
-    animation-duration: .3s;
-    left: 0;
-    width: 70vw;
+    from { transform: translateX(-108%); }
+    to { transform: translateX(0); }
 }
 
 @keyframes condenseMenu {
-    from { width: 70vw; }
-    to { width: 0vw; }
+    from { transform: translateX(0); }
+    to { transform: translateX(-108%); }
+}
+
+.navMenuUl.open {
+    animation: expandMenu 0.3s forwards;
 }
 
 .navMenuUl.closed,
 .navMenuUl.pageOpen {
-    animation-name: condenseMenu;
-    animation-duration: .3s;
-    left: -120px;
-    width: 0vw;
+    animation: condenseMenu 0.3s forwards;
 }
 
 .navMenuUl li {
