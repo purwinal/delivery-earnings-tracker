@@ -38,13 +38,14 @@ const earningsReducer = (myEarnings, action) => {
     }
 }
 
-function App() {
+const App = () => {
+// States
     const [ amountInput, setAmountInput ] = useState();
     const [ isMenuOpen, setIsMenuOpen ] = useState(false);
     const [ isSettingsOpen, setIsSettingsOpen ] = useState(false);
     const [ isDailyLogOpen, setIsDailyLogOpen ] = useState(false);
 
-// Saves "myEarnings" state into local storage
+// States saved to local storage
     const [ myEarnings, dispatch ] = useReducer(earningsReducer, [], () => {
         const localData = localStorage.getItem('MyEarningsLog');
         return localData ? JSON.parse(localData) : []
@@ -54,7 +55,7 @@ function App() {
         localStorage.setItem('MyEarningsLog', JSON.stringify(myEarnings))
     }, [myEarnings]);
 
-// Saves "myGoals" state into local storage
+
     const [ myGoals, setMyGoals ] = useState(() => {
         return JSON.parse(localStorage.getItem('MyGoalsLog')) || []
     });
@@ -63,7 +64,14 @@ function App() {
         localStorage.setItem('MyGoalsLog', JSON.stringify(myGoals))
     }, [myGoals])
 
-// Saves "myDailyLog" state into local storage
+    const [ goalInput, setGoalInput ] = useState(() => {
+        return JSON.parse(localStorage.getItem('MyGoalInput')) || ''
+    });
+
+    useEffect(() => {
+        localStorage.setItem('MyGoalInput', JSON.stringify(goalInput))
+    }, [goalInput])
+
     const [ myDailyLog, setMyDailyLog ] = useState(() => {
         return JSON.parse(localStorage.getItem('MyDailyLog')) || []
     });
@@ -72,7 +80,7 @@ function App() {
         localStorage.setItem('MyDailyLog', JSON.stringify(myDailyLog))
     }, [myDailyLog])
 
-// Saves "isLightThemeOn" state into local storage
+
     const [ isLightThemeOn, setIsLightThemeOn ] = useState(
         JSON.parse(localStorage.getItem('ThemeStatus')) || false
     );
@@ -80,15 +88,6 @@ function App() {
     useEffect(() => {
         localStorage.setItem('ThemeStatus', JSON.stringify(isLightThemeOn));
     }, [isLightThemeOn]);
-
-// Saves "goalInput" state into local storage
-    const [ goalInput, setGoalInput ] = useState(() => {
-        return JSON.parse(localStorage.getItem('MyGoalInput')) || []
-    });
-
-    useEffect(() => {
-        localStorage.setItem('MyGoalInput', JSON.stringify(goalInput))
-    }, [goalInput])
 
 // Closes menu when clicking outside of it
     let menuRef = useRef();
@@ -108,21 +107,6 @@ function App() {
         };
     });
 
-// Helper function to convert "hh:mm AM/PM" to a Date object on a fixed date
-    const parseTime = (timeString) => {
-        const [time, modifier] = timeString.split(" ");
-        let [hours, minutes] = time.split(":").map(Number);
-
-        // Convert to 24-hour format
-        if (modifier === "PM" && hours !== 12) hours += 12;
-        if (modifier === "AM" && hours === 12) hours = 0;
-
-        // Create a Date object on a fixed date with the parsed hours and minutes
-        const date = new Date("1970-01-01T00:00:00");
-        date.setHours(hours, minutes, 0, 0);
-        return date;
-    };
-
 // Toggle functions
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -140,7 +124,7 @@ function App() {
         setIsDailyLogOpen(!isDailyLogOpen);
     }
 
-// Handle functions
+// Add and delete amount handle functions
     const handleAddAmount = () => {
         if (amountInput !== '' && amountInput !== '0' && goalInput !== '' && goalInput !== '0') {
             dispatch({ type: 'ADD_AMOUNT', amountInput });
@@ -152,6 +136,24 @@ function App() {
         dispatch({ type: 'DELETE_AMOUNT', id });
     };
 
+// |||||||||||||||||||||||||||||||||||[ END ROUTE BUTTON ]|||||||||||||||||||||||||||||||||||
+
+// Helper function to convert "hh:mm AM/PM" to a Date object on a fixed date
+    const parseTime = (timeString) => {
+        const [time, modifier] = timeString.split(" ");
+        let [hours, minutes] = time.split(":").map(Number);
+
+        // Convert to 24-hour format
+        if (modifier === "PM" && hours !== 12) hours += 12;
+        if (modifier === "AM" && hours === 12) hours = 0;
+
+        // Create a Date object on a fixed date with the parsed hours and minutes
+        const date = new Date("1970-01-01T00:00:00");
+        date.setHours(hours, minutes, 0, 0);
+        return date;
+    };
+
+// Handle function to end the route and save the daily log
     const handleEndRoute = () => {
         const today = new Date();
         const formattedTime = today.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
@@ -197,7 +199,9 @@ function App() {
         window.location.reload();
     }
 
-// Calculates the daily total: Converts all object values into numbers and then sums them all up
+// |||||||||||||||||||||||||||||||||||[ PROGRESS BAR SECTION ]|||||||||||||||||||||||||||||||||||
+
+// Calculates the daily total and converts it into a number
     const calculateTotalDailyEarnings = (arr) => {
         return arr
             .map(entry => {
@@ -209,7 +213,7 @@ function App() {
 
     const totalDailyEarnings = calculateTotalDailyEarnings(myEarnings).toFixed(2);
 
-// Converts the goals from strings to numbers
+// Converts the goalInput value into a number
     const convertStringsToNumbers = (goalInput) => {
             const num = Number(goalInput);
             return isNaN(num) ? 0 : num;
@@ -217,7 +221,7 @@ function App() {
 
     const currentGoal = convertStringsToNumbers(goalInput);
 
-// Converts the currency format so that the "$" goes after the "-" sign when inputting negative numbers
+// Formats negative currency numbers so that the "-" sign goes before the "$" sign
     const formatCurrency = (value) => {
         const numericValue = parseFloat(value.replace(/[^0-9.-]/g, '')).toFixed(2);
         if (numericValue < 0) {
@@ -229,6 +233,8 @@ function App() {
 // Conditional colors of the progress bar
     const progressBarColor = () => {
         switch (true) {
+            case totalDailyEarnings === '0.00':
+                return "#ffffff";
             case totalDailyEarnings < (0.2 * currentGoal):
                 return "#909090";
             case totalDailyEarnings < (0.4 * currentGoal):
@@ -257,17 +263,6 @@ function App() {
         window.addEventListener('resize', setViewportHeight);
         return () => window.removeEventListener('resize', setViewportHeight);
     }, []);
-
-// Added to possibly fix the progress bar issue
-    useEffect(() => {
-        const progressBar = document.querySelector('.progressBar');
-        const progressBarFill = document.querySelector('.progressBarFill');
-
-        if (progressBar && progressBarFill) {
-            const barWidthInPx = (totalDailyEarnings / currentGoal) * progressBar.offsetWidth;
-            progressBarFill.style.width = `${barWidthInPx}px`;
-        }
-    }, [totalDailyEarnings, currentGoal]);
 
   	return (
         <div className={styles.gridContainer}>

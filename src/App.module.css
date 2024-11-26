@@ -33,7 +33,7 @@
 .gridContainer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 14rem minmax(auto, 1fr) 8rem;
+    grid-template-rows: 14rem minmax(auto, 1fr) auto;
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -163,7 +163,7 @@
 .bottomSection {
     display: inline-flex;
     gap: 1rem;
-    padding: 2em 0;
+    padding: 1em 0;
     background-color: #141414;
     align-items: center;
     justify-content: space-between;
