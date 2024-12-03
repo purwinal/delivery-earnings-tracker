@@ -271,7 +271,7 @@ const App = () => {
                 <div className={`${styles.progressBar} ${totalDailyEarnings >= currentGoal ? styles.completed : ''}`}>
                     <div
                         className={styles.progressBarFill}
-                        style={{ width: `${Math.min((totalDailyEarnings / currentGoal) * 100, currentGoal)}%`,
+                        style={{ width: `${Math.min((totalDailyEarnings / currentGoal) * 100, 100)}%`,
                         backgroundColor: progressBarColor() }}
                     >
                         {totalDailyEarnings <= currentGoal ? `${Math.floor((totalDailyEarnings / currentGoal) * 100)}%` : '100%'}
