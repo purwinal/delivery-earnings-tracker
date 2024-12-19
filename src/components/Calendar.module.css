@@ -86,7 +86,7 @@
 /* EVENT DETAILS SECTION */
 
 .eventDetailsSection {
-    padding: 1em;
+    padding: 1em 1em 1.6em 1em;
 }
 
 .eventContainer {
@@ -95,7 +95,7 @@
 
 .eventContainer h2 {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1.6em;
 }
 
 .eventInfo h3 {
@@ -120,3 +120,6 @@
   line-height: 3rem;
 }
 
+.text {
+    font-size: 1.3rem;
+}

@@ -66,7 +66,7 @@ const Calendar = ({
             <section className={`page-sections ${styles.eventDetailsSection}`}>
                 {selectedEvent ? (
                     <div className={styles.eventContainer}>
-                        <h2>
+                        <h2 className={styles.eventDate}>
                             {new Date(selectedEvent.fullDate + 'T00:00:00').toLocaleDateString('en-US', {
                                 year: 'numeric',
                                 month: 'long',
@@ -115,7 +115,7 @@ const Calendar = ({
                         </section>
                     </div>
                 ) : (
-                    <p>No event selected</p>
+                    <p className={styles.text}>No event selected</p>
                 )}
             </section>
         </>
