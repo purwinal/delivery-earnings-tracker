@@ -168,7 +168,7 @@
 .bottomSection {
     display: inline-flex;
     gap: 1rem;
-    padding: .5em 0;
+    padding: 1em 0;
     background-color: #141414;
     align-items: center;
     justify-content: space-between;
