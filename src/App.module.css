@@ -139,6 +139,11 @@
 
 .mappedGridHeadings {
     font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.mappedGridContainer {
+    font-size: 1.1rem;
 }
 
 .deleteBtnContainer {
