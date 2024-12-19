@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: -34px;
+    bottom: -33px;
     z-index: 1;
     height: 100vh;
     width: 70vw;
@@ -73,7 +73,7 @@
     display: flex;
     align-items: end;
     justify-self: center;
-    margin-bottom: 8em;
+    margin-bottom: 7.8em;
 }
 
 .routeBtnContainer {

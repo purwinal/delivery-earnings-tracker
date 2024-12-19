@@ -173,3 +173,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.bottomSection.menuOpen {
+    background-color: #000;
+}
