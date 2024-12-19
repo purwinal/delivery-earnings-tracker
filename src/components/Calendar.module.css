@@ -100,10 +100,12 @@
 
 .eventInfo h3 {
     text-align: center;
+    font-size: 1.3rem;
 }
 
 .eventList {
-    padding: 0 2em;
+    padding: 0 1.5em;
+    font-size: 1.2rem;
 }
 
 .individualEventContainer {

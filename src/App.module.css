@@ -122,7 +122,7 @@
 
 .middleSection {
     background-color: #000;
-    padding: 2em;
+    padding: 2em 1.5em;
     color: #fff;
     overflow: auto;
     line-height: 3.5rem;
@@ -139,11 +139,11 @@
 
 .mappedGridHeadings {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .mappedGridContainer {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .deleteBtnContainer {
