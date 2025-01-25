@@ -125,6 +125,16 @@ const App = () => {
     }
 
 // Add and delete amount handle functions
+    const handleAddAmountChange = (e) => {
+        let amount = e.target.value.replace(/[^0-9]/g, "");
+        if (amount) {
+            const formattedAmount = amount.slice(0, amount.length - 2) + "." + amount.slice(-2);
+            setAmountInput(formattedAmount);
+        } else {
+            setAmountInput("");
+        }
+    };
+
     const handleAddAmount = () => {
         if (amountInput !== '' && amountInput !== '0' && goalInput !== '' && goalInput !== '0') {
             dispatch({ type: 'ADD_AMOUNT', amountInput });
@@ -333,6 +343,7 @@ const App = () => {
                     amountInput={amountInput}
                     setAmountInput={setAmountInput}
                     goalInput={goalInput}
+                    handleAddAmountChange={handleAddAmountChange}
                     handleAddAmount={handleAddAmount}
                 />
             </div>

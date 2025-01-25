@@ -6,18 +6,20 @@ const BottomInputArea = ({
     amountInput,
     setAmountInput,
     goalInput,
+    handleAddAmountChange,
     handleAddAmount
 }) => {
 
     return (
         <div className={`${styles.bottomInputArea} ${isMenuOpen ? styles.menuOpen : ""}`}>
             <input
-                type="number"
+                type="text"
+                inputmode="numeric"
                 keyboardType="numeric"
                 className={styles.amountInput}
                 placeholder="$0.00"
                 value={amountInput}
-                onChange={(e) => setAmountInput(e.target.value)}
+                onChange={handleAddAmountChange}
                 required
             />
             {amountInput < 0 || amountInput > 0 && amountInput !== 0 && goalInput > 0 ?

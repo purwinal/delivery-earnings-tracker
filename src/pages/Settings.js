@@ -14,8 +14,14 @@ const Settings = ({
 }) => {
 
     const handleInputChange = (e) => {
-        setGoalInput(e.target.value);
-    }
+        let goal = e.target.value.replace(/[^0-9]/g, "");
+        if (goal) {
+            const formattedGoal = goal.slice(0, goal.length - 2) + "." + goal.slice(-2);
+            setGoalInput(formattedGoal);
+        } else {
+            setGoalInput("");
+        }
+    };
 
     const handleSetGoal = (e) => {
         e.preventDefault();
