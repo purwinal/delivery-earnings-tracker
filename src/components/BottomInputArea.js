@@ -14,7 +14,7 @@ const BottomInputArea = ({
         <div className={`${styles.bottomInputArea} ${isMenuOpen ? styles.menuOpen : ""}`}>
             <input
                 type="text"
-                inputMode="decimal"
+                inputMode="numeric"
                 className={styles.amountInput}
                 placeholder="$0.00"
                 value={amountInput}
