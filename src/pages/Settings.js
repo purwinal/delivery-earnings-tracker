@@ -43,8 +43,7 @@ const Settings = ({
                 <h2 className="page-section-headings">My Goal</h2>
                 <div className="flex-input-areas">
                     <input
-                        type="number"
-                        keyboardType="numeric"
+                        type="text"
                         className="goal-input"
                         placeholder="Enter amount..."
                         value={goalInput}
