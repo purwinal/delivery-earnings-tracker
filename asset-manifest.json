@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-delivery-earnings-tracker/static/css/main.8032e19b.css",
-    "main.js": "/react-delivery-earnings-tracker/static/js/main.a59f0157.js",
+    "main.js": "/react-delivery-earnings-tracker/static/js/main.0ff40a5a.js",
     "static/js/453.d28f8d44.chunk.js": "/react-delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js",
     "index.html": "/react-delivery-earnings-tracker/index.html",
     "main.8032e19b.css.map": "/react-delivery-earnings-tracker/static/css/main.8032e19b.css.map",
-    "main.a59f0157.js.map": "/react-delivery-earnings-tracker/static/js/main.a59f0157.js.map",
+    "main.0ff40a5a.js.map": "/react-delivery-earnings-tracker/static/js/main.0ff40a5a.js.map",
     "453.d28f8d44.chunk.js.map": "/react-delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8032e19b.css",
-    "static/js/main.a59f0157.js"
+    "static/js/main.0ff40a5a.js"
   ]
 }
