@@ -21,7 +21,7 @@
     position: absolute;
     bottom: -34px;
     z-index: 1;
-    height: 100vh;
+    height: 100dvh;
     width: 70vw;
     align-items: center;
     justify-content: start;

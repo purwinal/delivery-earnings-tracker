@@ -34,7 +34,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 14rem minmax(auto, 1fr) auto;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     position: fixed;
     bottom: 0;
