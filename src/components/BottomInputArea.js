@@ -4,7 +4,6 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 const BottomInputArea = ({
     isMenuOpen,
     amountInput,
-    setAmountInput,
     goalInput,
     handleAddAmountChange,
     handleAddAmount

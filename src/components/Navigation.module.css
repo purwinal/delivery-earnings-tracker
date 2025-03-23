@@ -66,6 +66,54 @@
     text-decoration: none;
 }
 
+/* GOAL SECTION */
+
+.goalSection {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1.5em 0 !important;
+}
+
+.goalItems {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.goalInput {
+    width: 75%;
+    height: 1.5em;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: .3em 1em;
+    font-size: 1.5rem;
+}
+
+.goalInput:focus {
+    outline: none;
+    border: 3px solid #008d4b;
+}
+
+.goalBtn {
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    background-color: #008d4b;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.goalBtn:active {
+    background-color: #004525;
+    color: #8e8e8e;
+}
+
 /* END ROUTE BUTTON */
 
 .routeBtnListItem {

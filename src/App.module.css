@@ -9,10 +9,8 @@
     border-color: #000;
 }
 
-.topSection.menuOpen .divider,
 .middleSection.menuOpen div,
-.middleSection.menuOpen .amountDeleteBtn,
-.middleSection.menuOpen .divider {
+.middleSection.menuOpen .amountDeleteBtn {
     color: #000000dc;
     border-color: #000;
     background-color: transparent;
@@ -122,10 +120,10 @@
 
 .middleSection {
     background-color: #000;
-    padding: 2em;
+    padding: 0 2em 2em;
     color: #fff;
     overflow: auto;
-    line-height: 3.5rem;
+    line-height: 3.4rem;
 }
 
 .mappedGridHeadings,
@@ -138,8 +136,13 @@
 }
 
 .mappedGridHeadings {
+    position: sticky;
+    top: 0;
     font-weight: bold;
     font-size: 1.3rem;
+    border-bottom: 1px solid #EEE;
+    background-color: #000;
+    padding: .5em 0;
 }
 
 .mappedGridContainer {

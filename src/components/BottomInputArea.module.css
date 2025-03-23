@@ -8,6 +8,21 @@
     justify-content: space-between;
 }
 
+.amountInput {
+  width: 100%;
+  height: 1.5em;
+  border: 3px solid transparent;
+  border-radius: 50px;
+  background-color: #fff;
+  padding: .5em 1em;
+  font-size: 1.5rem;
+}
+
+.amountInput:focus {
+  outline: none;
+  border: 3px solid #008d4b;
+}
+
 .enterBtn {
     background-color: #008d4b;
     color: #fff;

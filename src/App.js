@@ -313,6 +313,7 @@ const App = () => {
                         <div className={styles.deleteBtnContainer}>
                             <button
                                 className={styles.amountDeleteBtn}
+                                type="button"
                                 onClick={() => handleDeleteAmount(myEarning.id)}
                             >
                                 <DoNotDisturbOnOutlinedIcon
@@ -335,11 +336,14 @@ const App = () => {
                     menuRef={menuRef}
                     handleEndRoute={handleEndRoute}
                     totalDailyEarnings={totalDailyEarnings}
+                    goalInput={goalInput}
+                    setGoalInput={setGoalInput}
+                    myGoals={myGoals}
+                    setMyGoals={setMyGoals}
                 />
                 <BottomInputArea
                     isMenuOpen={isMenuOpen}
                     amountInput={amountInput}
-                    setAmountInput={setAmountInput}
                     goalInput={goalInput}
                     handleAddAmountChange={handleAddAmountChange}
                     handleAddAmount={handleAddAmount}
@@ -354,10 +358,6 @@ const App = () => {
                     parseTime={parseTime}
                 />} />
                 <Route path="Settings" element={<Settings
-                    myGoals={myGoals}
-                    setMyGoals={setMyGoals}
-                    goalInput={goalInput}
-                    setGoalInput={setGoalInput}
                     isLightThemeOn={isLightThemeOn}
                     toggleTheme={toggleTheme}
                     isSettingsOpen={isSettingsOpen}
