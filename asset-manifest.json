@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-delivery-earnings-tracker/static/css/main.7ba7b8f2.css",
-    "main.js": "/react-delivery-earnings-tracker/static/js/main.f41d969d.js",
+    "main.css": "/react-delivery-earnings-tracker/static/css/main.eb588d79.css",
+    "main.js": "/react-delivery-earnings-tracker/static/js/main.eb1a3ff0.js",
     "static/js/453.d28f8d44.chunk.js": "/react-delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js",
     "index.html": "/react-delivery-earnings-tracker/index.html",
-    "main.7ba7b8f2.css.map": "/react-delivery-earnings-tracker/static/css/main.7ba7b8f2.css.map",
-    "main.f41d969d.js.map": "/react-delivery-earnings-tracker/static/js/main.f41d969d.js.map",
+    "main.eb588d79.css.map": "/react-delivery-earnings-tracker/static/css/main.eb588d79.css.map",
+    "main.eb1a3ff0.js.map": "/react-delivery-earnings-tracker/static/js/main.eb1a3ff0.js.map",
     "453.d28f8d44.chunk.js.map": "/react-delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ba7b8f2.css",
-    "static/js/main.f41d969d.js"
+    "static/css/main.eb588d79.css",
+    "static/js/main.eb1a3ff0.js"
   ]
 }
