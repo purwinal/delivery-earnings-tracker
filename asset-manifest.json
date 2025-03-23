@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-delivery-earnings-tracker/static/css/main.eb588d79.css",
-    "main.js": "/react-delivery-earnings-tracker/static/js/main.eb1a3ff0.js",
-    "static/js/453.d28f8d44.chunk.js": "/react-delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js",
-    "index.html": "/react-delivery-earnings-tracker/index.html",
-    "main.eb588d79.css.map": "/react-delivery-earnings-tracker/static/css/main.eb588d79.css.map",
-    "main.eb1a3ff0.js.map": "/react-delivery-earnings-tracker/static/js/main.eb1a3ff0.js.map",
-    "453.d28f8d44.chunk.js.map": "/react-delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js.map"
+    "main.css": "/delivery-earnings-tracker/static/css/main.eb588d79.css",
+    "main.js": "/delivery-earnings-tracker/static/js/main.bd0821c3.js",
+    "static/js/453.d28f8d44.chunk.js": "/delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js",
+    "index.html": "/delivery-earnings-tracker/index.html",
+    "main.eb588d79.css.map": "/delivery-earnings-tracker/static/css/main.eb588d79.css.map",
+    "main.bd0821c3.js.map": "/delivery-earnings-tracker/static/js/main.bd0821c3.js.map",
+    "453.d28f8d44.chunk.js.map": "/delivery-earnings-tracker/static/js/453.d28f8d44.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eb588d79.css",
-    "static/js/main.eb1a3ff0.js"
+    "static/js/main.bd0821c3.js"
   ]
 }
