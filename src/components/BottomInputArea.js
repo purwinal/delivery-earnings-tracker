@@ -4,22 +4,21 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 const BottomInputArea = ({
     isMenuOpen,
     amountInput,
+    setAmountInput,
     goalInput,
     handleAddAmountChange,
-    handleAddAmount,
-    inputRef
+    handleAddAmount
 }) => {
 
     return (
         <div className={`${styles.bottomInputArea} ${isMenuOpen ? styles.menuOpen : ""}`}>
             <input
-                type="number"
+                type="text"
+                inputMode="numeric"
                 className={styles.amountInput}
                 placeholder="$0.00"
                 value={amountInput}
                 onChange={handleAddAmountChange}
-                step="0.01"
-                ref={inputRef}
                 required
             />
             {amountInput < 0 || amountInput > 0 && amountInput !== 0 && goalInput > 0 ?

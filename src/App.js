@@ -92,17 +92,6 @@ const App = () => {
 // Closes menu when clicking outside of it
     let menuRef = useRef();
 
-// Focuses on input fields when in web app mode
-    const inputRef = useRef(null);
-
-    useEffect(() => {
-        if (inputRef.current) {
-            inputRef.current.addEventListener('focus', () => {
-                inputRef.current.focus();
-            });
-        }
-    }, []);
-
     useEffect(() => {
         let handler = (e) => {
             if (!menuRef.current.contains(e.target)) {
@@ -137,9 +126,9 @@ const App = () => {
 
 // Add and delete amount handle functions
     const handleAddAmountChange = (e) => {
-        let amount = e.target.value;
+        let amount = e.target.value.replace(/[^0-9]/g, "");
         if (amount) {
-            const formattedAmount = parseFloat(amount).toFixed(2);
+            const formattedAmount = amount.slice(0, amount.length - 2) + "." + amount.slice(-2);
             setAmountInput(formattedAmount);
         } else {
             setAmountInput("");
@@ -317,7 +306,6 @@ const App = () => {
                     <div>AMOUNT</div>
                     <div>CANCEL</div>
                 </div>
-                <hr className={styles.divider} />
                 {myEarnings.map((myEarning) => (
                     <div className={styles.mappedGridContainer} key={myEarning.id}>
                         <div>{myEarning.time}</div>
@@ -335,7 +323,6 @@ const App = () => {
                         </div>
                     </div>
                 ))}
-                <hr className={styles.divider} />
             </div>
             <div className={`${styles.bottomSection} ${isMenuOpen ? styles.menuOpen : ""}`}>
                 <Navigation
@@ -352,10 +339,10 @@ const App = () => {
                 <BottomInputArea
                     isMenuOpen={isMenuOpen}
                     amountInput={amountInput}
+                    setAmountInput={setAmountInput}
                     goalInput={goalInput}
                     handleAddAmountChange={handleAddAmountChange}
                     handleAddAmount={handleAddAmount}
-                    inputRef={inputRef}
                 />
             </div>
             <Routes>
@@ -375,7 +362,6 @@ const App = () => {
                     toggleTheme={toggleTheme}
                     isSettingsOpen={isSettingsOpen}
                     toggleSettings={toggleSettings}
-                    inputRef={inputRef}
                 />} />
             </Routes>
         </div>

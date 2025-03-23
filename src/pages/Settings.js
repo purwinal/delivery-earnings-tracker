@@ -10,14 +10,13 @@ const Settings = ({
     isLightThemeOn,
     toggleTheme,
     isSettingsOpen,
-    toggleSettings,
-    inputRef
+    toggleSettings
 }) => {
 
     const handleInputChange = (e) => {
-        let goal = e.target.value;
+        let goal = e.target.value.replace(/[^0-9]/g, "");
         if (goal) {
-            const formattedGoal = parseFloat(goal).toFixed(2);
+            const formattedGoal = goal.slice(0, goal.length - 2) + "." + goal.slice(-2);
             setGoalInput(formattedGoal);
         } else {
             setGoalInput("");
@@ -44,14 +43,13 @@ const Settings = ({
                 <h2 className="page-section-headings">My Goal</h2>
                 <div className="flex-input-areas">
                     <input
-                        type="number"
+                        type="text"
+                        inputMode="numeric"
                         className="goal-input"
                         placeholder="Enter amount..."
                         value={goalInput}
                         onChange={handleInputChange}
-                        step="0.01"
                         required
-                        ref={inputRef}
                     />
                     <button
                         className={styles.goalBtn}
