@@ -1,7 +1,7 @@
 {
   "name": "delivery-earnings-tracker",
   "version": "0.1.0",
-  "homepage": "https://purwinal.github.io/react-delivery-earnings-tracker",
+  "homepage": "https://purwinal.github.io/delivery-earnings-tracker",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
